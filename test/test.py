@@ -10,8 +10,8 @@ from cocotb.triggers import ClockCycles
 async def test_project(dut):
     dut._log.info("Start")
 
-    # Set the clock period to 10 us (100 KHz)
-    clock = Clock(dut.clk, 10, units="us")
+    # Set the clock period to 40 ns (25 MHz)
+    clock = Clock(dut.clk, 25, units="ns")
     cocotb.start_soon(clock.start())
 
     # Reset
@@ -23,7 +23,7 @@ async def test_project(dut):
     await ClockCycles(dut.clk, 10)
     dut.rst_n.value = 1
 
-    dut._log.info("Test project behavior")
+    dut._log.info("Test project")
 
     # Set the input values you want to test
     # dut.ui_in.value = 20
