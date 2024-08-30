@@ -1,6 +1,6 @@
 # Tiny Tapeout project information
 project:
-  title:        "WIP"          # Project title
+  title:        "wip"          # Project title
   author:       "sylefeb"      # Your name
   discord:      ""      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
   description:  "Democompo, let's do something!"      # One line description of what your project does
