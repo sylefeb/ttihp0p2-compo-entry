@@ -33,18 +33,12 @@ THIS EFFECT NORALLY USES PRECOMP TABLE
 HUGE AND UGLY
 HERE RACING THE BEAM
 HOW? CORDIC MAGIC!
-PIPELINED THREE STAGES PLUS TRICKS
-HOPE YOU ENJOYED!
+FOUR STAGES PIPELINE PLUS TRICKS
+HOPE YOU ENJOY!
 @SYLEFEB
 
 "WARP": distort with tunnel? !!
-
-TODO: test with uninitialized everywhere
-TODO: dither as logic
 */
-
-// Font script
-$$dofile('tic-80.lua')
 
 $$ W = 640
 $$ H = 480
@@ -415,7 +409,7 @@ unit music(
     uint1 next_sample = (clock_count[0,9] == 0);
 
     int9 sum        = (tri_wave + squ_wave);
-    audio8          = ~go ? 8b0 : (sum>>>1); // rythm_count[10,1] ? (tri_wave) : (squ_wave);
+    audio8          = ~go ? 8b0 : (sum>>>1);
     tpos            = next_sample ? (tpos + bass[idx[0,5]] + drum_inc) : tpos;
     qpos            = next_sample ? (qpos + keys[idx]) : qpos;
 
