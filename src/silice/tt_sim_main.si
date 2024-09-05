@@ -1,6 +1,9 @@
-// SL 2024-08-27 @sylefeb
+// SL 2024-08-16 @sylefeb
 // ========================================================
-// MIT license
+//
+// ========================================================
+// https://github.com/sylefeb/Silice
+// MIT license, see LICENSE_MIT in Silice repo root
 // ========================================================
 
 $$if not VERILATOR then
@@ -14,8 +17,8 @@ unit main(
   output! uint6 video_r,
   output! uint6 video_g,
   output! uint6 video_b,
-  output  uint1 video_hs,
-  output  uint1 video_vs,
+  output! uint1 video_hs,
+  output! uint1 video_vs,
 $$if VERILATOR then
   output! uint1 video_clock,
 $$end

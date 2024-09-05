@@ -11,7 +11,7 @@ async def test_project(dut):
     dut._log.info("Start")
 
     # Set the clock period to 40 ns (25 MHz)
-    clock = Clock(dut.clk, 25, units="ns")
+    clock = Clock(dut.clk, 40, units="ns")
     cocotb.start_soon(clock.start())
 
     # Reset
@@ -25,17 +25,20 @@ async def test_project(dut):
 
     dut._log.info("Test project")
 
-    # Set the input values you want to test
-    # dut.ui_in.value = 20
-    # dut.uio_in.value = 30
-
     # Wait for one clock cycle to see the output values
     await ClockCycles(dut.clk, 1)
 
-    # The following assersion is just an example of how to check the output values.
-    # Change it to match the actual expected output of your module:
-    # assert dut.uo_out.value == 50
-    assert True
-
-    # Keep testing the module by changing the input values, waiting for
-    # one or more clock cycles, and asserting the expected output values.
+    # prev_vs = '0'
+    # frames = 0
+    # ticks = 0
+    # while frames < 2:
+    #     ticks = ticks + 1
+    #     # wait one cycle
+    #     await ClockCycles(dut.clk, 1)
+    #     # check vertical sync
+    #     if dut.uo_out.value.binstr[7-3] == '1' and prev_vs == '0':
+    #         print("vsynch on ",ticks)
+    #     if dut.uo_out.value.binstr[7-3] == '0' and prev_vs == '1':
+    #         print("vsynch off ",ticks)
+    #         frames = frames + 1
+    #     prev_vs = dut.uo_out.value.binstr[7-3]
