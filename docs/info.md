@@ -15,6 +15,8 @@ You can also include images in this folder and reference them in the markdown. E
 
 ## How it works
 
+> *But does it work?*
+
 ### Preface
 
 This demo is written in [Silice](https://github.com/sylefeb/Silice/), my HDL.
@@ -32,7 +34,7 @@ between -- these form keypoint rings along the tunnel. All the effects are then 
 ways (like a *tunnel effect processor* which registers can be configured for
 various effects).
 
-The demos uses a lot of dithering (ordered Bayer dithering) given the output is RGB 2-2-2. All computations are grayscale and the RGB lense effect is obtained by delaying the grayscale values using the tunnel distance in R and B.
+The demo uses a lot of dithering (ordered Bayer dithering) given the output is RGB 2-2-2. All computations are grayscale and the RGB lense effect is obtained by delaying the grayscale values using the tunnel distance in R and B.
 
 I also tried to make the logo interesting by deviating from a classical pixelated look.
 It is composed of tiles, either full or triangular, with a comparator and a bit
