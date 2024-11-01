@@ -22,6 +22,7 @@ unit main(
 $$if VERILATOR then
   output! uint1 video_clock,
 $$end
+  output! uint1 pwm_audio
 ) {
 
   vga_demo demo(
@@ -31,9 +32,10 @@ $$end
 
   always {
     video_clock = clock;
-    video_r = {demo.video_r,4b0};
-    video_g = {demo.video_g,4b0};
-    video_b = {demo.video_b,4b0};
+    video_r     = {demo.video_r,4b0};
+    video_g     = {demo.video_g,4b0};
+    video_b     = {demo.video_b,4b0};
+    pwm_audio   = demo.audio1;
   }
 
 }
